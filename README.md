@@ -1,48 +1,5 @@
 # Arduino Lamp Brightness Logic — Lab Submission
 
-## 1. Arduino Sketch (`sketch.ino`)
-
-```cpp
-#include <Arduino.h>
-
-// Variables for testing
-bool switchOn = true;         // Change to true or false to test
-int brightnessSetting = 50;   // Change to 0, 50, or 100 to test
-int lampBrightness;           // Variable to store the final output
-
-// Function prototype
-int getLampBrightness(bool switchOn, int brightnessSetting);
-
-void setup() {
-  Serial.begin(115200);
-  delay(2000); // Allow time for Serial Monitor connection
-
-  // Call function, store result, and print
-  lampBrightness = getLampBrightness(switchOn, brightnessSetting);
-  
-  Serial.print("Switch: ");
-  Serial.print(switchOn ? "ON" : "OFF");
-  Serial.print(" | Setting: ");
-  Serial.print(brightnessSetting);
-  Serial.print(" | Actual Brightness: ");
-  Serial.println(lampBrightness);
-}
-
-void loop() {
-  // Not used for simulation
-}
-
-// Function definition
-int getLampBrightness(bool switchOn, int brightnessSetting) {
-  if (switchOn) {
-    return brightnessSetting;
-  } else {
-    return 0;
-  }
-}
-```
-
----
 
 ## 2. Completed Test Table
 
